@@ -2,7 +2,11 @@ name: Claude Code Warmup
 
 on:
   schedule:
-    - cron: '0 9 * * 1-5'
+    - cron: '30 3 * * 1-5'   # 5:30 AM Madrid (CEST) — L-V
+    - cron: '35 8 * * 1-2'   # 10:35 AM Madrid (CEST) — L-V
+    - cron: '40 13 * * 1-5'  # 15:40 Madrid (CEST) — L-V
+    - cron: '0 7 * * 0,6'    # 9:00 AM Madrid (CEST) — sáb y dom
+    - cron: '5 12 * * 0,6'   # 14:05 PM Madrid (CEST) — sáb y dom
   workflow_dispatch: {}
 
 concurrency:
@@ -35,7 +39,7 @@ jobs:
           echo '{"hasCompletedOnboarding":true}' > ~/.claude.json
           output_file="$(mktemp)"
           set +e
-          claude -p "hi" --model haiku --no-session-persistence >"$output_file" 2>&1
+          claude -p "ok? responde solo ok" --model haiku --no-session-persistence >"$output_file" 2>&1
           status=$?
           set -e
           cat "$output_file"
