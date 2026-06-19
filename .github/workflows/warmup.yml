@@ -2,11 +2,11 @@ name: Claude Code Warmup
 
 on:
   schedule:
-    - cron: '30 3 * * 1-5'   # 5:30 AM Madrid (CEST) — L-V
-    - cron: '35 8 * * 1-5'   # 10:35 AM Madrid (CEST) — L-V
-    - cron: '40 13 * * 1-5'  # 15:40 Madrid (CEST) — L-V
-    - cron: '0 7 * * 0,6'    # 9:00 AM Madrid (CEST) — sáb y dom
-    - cron: '5 12 * * 0,6'   # 14:05 PM Madrid (CEST) — sáb y dom
+    - cron: '30 2 * * 1-5'   # 5:30 AM Madrid (CEST) — L-V → ajustado -1h
+    - cron: '35 7 * * 1-5'   # 10:35 AM Madrid (CEST) — L-V → ajustado -1h
+    - cron: '40 12 * * 1-5'  # 15:40 Madrid (CEST) — L-V → ajustado -1h
+    - cron: '0 6 * * 0,6'    # 9:00 AM Madrid (CEST) — sáb y dom → ajustado -1h
+    - cron: '5 11 * * 0,6'   # 14:05 PM Madrid (CEST) — sáb y dom → ajustado -1h
   workflow_dispatch: {}
 
 concurrency:
